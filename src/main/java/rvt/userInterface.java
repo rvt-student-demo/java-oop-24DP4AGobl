@@ -18,13 +18,17 @@ public class userInterface {
             if (cmd.equals("add")){
                 System.out.print("To add: ");
                 String word = scanner.nextLine();
-                toDoList.add(word);
+                if (toDoList.checkEventString(word) == true) {
+                    toDoList.add(word);
+                } else {
+                    System.out.println("!!String error!!");
+                }
             } else if (cmd.equals("list")){
                 toDoList.print();
             } else if (cmd.equals("remove")){
-                System.out.print("Which one is removed? ");
-                int number = Integer.valueOf(scanner.nextLine());
-                toDoList.remove(number);
+                System.out.print("To remove: ");
+                int id = Integer.valueOf(scanner.nextLine());
+                toDoList.remove(id);
             } else if (cmd.equals("stop")) {
                 break;
             } 
