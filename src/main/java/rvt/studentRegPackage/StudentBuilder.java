@@ -1,13 +1,13 @@
 package rvt.studentRegPackage;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
 public class StudentBuilder {
     private String name;
     private String surname;
     private String email;
     private String code;
-    private Instant regTime;
+    private LocalDateTime regTime;
 
     public StudentBuilder name(String name){
         this.name = name;
@@ -29,12 +29,12 @@ public class StudentBuilder {
         return this;
     }
 
-    public StudentBuilder regTime(Instant regTime){
+    public StudentBuilder regTime(LocalDateTime regTime){
         this.regTime = regTime;
         return this;
     }
 
     public Student build() {
-        return new Student(name, surname, email, code, regTime);
+        return new Student(code,name,surname,email,regTime);
     }
 }
