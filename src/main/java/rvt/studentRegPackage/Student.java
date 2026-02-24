@@ -1,6 +1,5 @@
 package rvt.studentRegPackage;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 public class Student {
@@ -12,9 +11,9 @@ public class Student {
 
     public Student(String code, String name, String surname, String email, LocalDateTime regTime) {
         this.code = code;
+        this.name = name;
         this.surname = surname;
         this.email = email;
-        this.name = name;
         this.regTime = regTime;
     }
 
@@ -55,6 +54,6 @@ public class Student {
     @Override
 
     public String toString() {
-        return code + "," + name + "," + surname + "," + email + "," + code + "," + regTime;
+        return code + "," + name + "," + surname + "," + email + "," + regTime;
     }
 }

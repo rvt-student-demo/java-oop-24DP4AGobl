@@ -1,12 +1,15 @@
 package rvt;
 import java.util.Scanner;
+import rvt.studentRegPackage.*;
 
 public class App {
     public static void main(String[] args) {
-        toDoList list = new toDoList();
+        //FileHandler handler = new FileHandler();
         Scanner scanner = new Scanner(System.in);
+        StudentManager manager = new StudentManager();
+        Validator validator = new Validator(manager);
 
-        userInterface userInterface = new userInterface(list, scanner);
+        UserInterface userInterface = new UserInterface(manager, scanner, validator);
         userInterface.start();
     }
 }

@@ -1,7 +1,6 @@
 package rvt.studentRegPackage;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Validator {
     StudentManager manager;

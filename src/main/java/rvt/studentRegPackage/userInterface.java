@@ -23,8 +23,8 @@ public class UserInterface {
             } else if (command.equals("register")) {
                 String code = validator.getValidInput(scanner, "Personcode: ", Validator.checkCode());
                 String name = validator.getValidInput(scanner, "Name: ", Validator.checkName());
-                String surname = validator.getValidInput(scanner, "Surname", Validator.checkSurname());
-                String email = validator.getValidInput(scanner, "Email", Validator.checkEmail());
+                String surname = validator.getValidInput(scanner, "Surname: ", Validator.checkSurname());
+                String email = validator.getValidInput(scanner, "Email: ", Validator.checkEmail());
 
                 manager.register(new StudentBuilder()
                                     .code(code)
@@ -45,8 +45,19 @@ public class UserInterface {
                 System.out.println();
 
                 manager.edit(code, field, newValue);
+            } else if(command.equals("edit")) {
+                System.out.print("Ievadiet personas personas kodu kuru velaties rediģēt: ");
+                String code = scanner.nextLine().toLowerCase();
+                System.out.print("Ievadiet ko vēlaties redģēt: ");
+                String field = scanner.nextLine().toLowerCase();
+                System.out.print("Ievadiet jauno informāciju: ");
+                String value = scanner.nextLine().toLowerCase();
+
+                manager.edit(code, field, value);
             } else if (command.equals("exit")) {
                 break;
+            } else {
+                System.out.println("Wrong command or a command like that doesn't exist.\nType 'help' for list of commands");
             }
         }
     }

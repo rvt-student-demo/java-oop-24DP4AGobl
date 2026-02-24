@@ -40,8 +40,6 @@ public class FileHandler {
 
     public String[] getCSVTitle(){
         try(Scanner reader = new Scanner(new File(filePath))){
-            reader.nextLine();
-
             while(reader.hasNextLine()) {
                 String row = reader.nextLine();
                 String[] parts = row.split(",");

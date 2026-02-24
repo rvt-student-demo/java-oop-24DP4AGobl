@@ -1,6 +1,6 @@
 package rvt.studentRegPackage;
 
-import java.io.*;
+//import java.io.*;
 import java.util.ArrayList;
 
 public class StudentManager {

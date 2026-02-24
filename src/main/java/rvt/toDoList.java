@@ -15,7 +15,7 @@ public class toDoList{
         loadFromFile();
     }
     public void add(String task){
-        list.add(task);
+        this.list.add(task);
         
         try (PrintWriter pWriter = new PrintWriter(new FileWriter(filePath, true))){
             pWriter.println(getLastId() + "," + task);
