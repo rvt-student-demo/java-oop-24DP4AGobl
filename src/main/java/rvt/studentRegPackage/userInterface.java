@@ -38,17 +38,12 @@ public class UserInterface {
             } else if (command.equals("remove")) {
                 System.out.print("Ievadiet personas personas kodu kuru velaties izdzest: ");
                 String code = scanner.nextLine().toLowerCase();
-                System.out.print("Ko velaties nomainit: ");
-                String field = scanner.nextLine().toLowerCase();
-                System.out.printf("Ievadiet jauno %s", code);
-                String newValue = scanner.nextLine().toLowerCase();
-                System.out.println();
 
-                manager.edit(code, field, newValue);
+                manager.remove(code);
             } else if(command.equals("edit")) {
-                System.out.print("Ievadiet personas personas kodu kuru velaties rediģēt: ");
+                System.out.print("Ievadiet personas personas kodu kuru velaties rediget: ");
                 String code = scanner.nextLine().toLowerCase();
-                System.out.print("Ievadiet ko vēlaties redģēt: ");
+                System.out.print("Ievadiet ko vēlaties redget: ");
                 String field = scanner.nextLine().toLowerCase();
                 System.out.print("Ievadiet jauno informāciju: ");
                 String value = scanner.nextLine().toLowerCase();
