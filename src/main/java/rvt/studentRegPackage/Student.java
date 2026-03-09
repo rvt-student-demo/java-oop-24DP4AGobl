@@ -38,6 +38,26 @@ public class Student {
     }
 
 
+    public int getCodeLength(){
+        return code.length();
+    }
+    
+    public int getNameLength(){
+        return name.length();
+    }
+
+    public int getSurnameLength(){
+        return surname.length();
+    }
+
+    public int getEmailLength(){
+        return email.length();
+    }
+
+    public int getRegTimeLength(){
+        return regTime.toString().length();
+    }
+    
 
     public void setName(String newName) {
         this.name = newName;

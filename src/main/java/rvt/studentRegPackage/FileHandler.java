@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 public class FileHandler {
     private final String filePath = "data/studentData.csv";
-    private StudentManager manager;
+    //private StudentManager manager;
 
     public void loadFromFile(ArrayList<Student> students) {
         try(Scanner reader = new Scanner(new File(filePath))){
@@ -40,11 +40,9 @@ public class FileHandler {
 
     public String[] getCSVTitle(){
         try(Scanner reader = new Scanner(new File(filePath))){
-            while(reader.hasNextLine()) {
-                String row = reader.nextLine();
-                String[] parts = row.split(",");
-                return parts;
-            }
+            String row = reader.nextLine();
+            String[] parts = row.split(",");
+            return parts;
         }catch (FileNotFoundException e) {
             System.out.println("Error: " + e.getMessage());
         }
@@ -55,7 +53,7 @@ public class FileHandler {
         try (PrintWriter pWriter = new PrintWriter(new FileWriter(filePath))) {
             pWriter.println("personCode,name,surname,email,regDateTime");
             
-            for (int i = 0; i < manager.getLastId(); i++) {
+            for (int i = 0; i < students.size(); i++) {
                pWriter.println(students.get(i).toString());
             }
         }catch (IOException e) {

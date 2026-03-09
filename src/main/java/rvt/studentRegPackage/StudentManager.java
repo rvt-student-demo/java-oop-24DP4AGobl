@@ -23,10 +23,13 @@ public class StudentManager {
     }
 
     public void remove(String code) {
-        for(int i = 0; i < getLastId(); i++) {
+        for(int i = 0; i < getLastId() + 1; i++) {
             String checkCode = students.get(i).getCode();
-            if (checkCode == code) {
+            if (checkCode.equals(code)) {
+                String name = getStudentByCode(code).getName();
+                String surname = getStudentByCode(code).getSurname();//those values dissapear after the student.remove is initialized, so I have to grab them before that happens.
                 students.remove(i);
+                System.out.printf("Students %s %s tika veiksmigi izdezests\n", name, surname);
             }
         }
 
@@ -53,7 +56,7 @@ public class StudentManager {
     }
 
     public void help() {
-        System.out.println("list of commands:\n|register - registre lietotaju\n|show - parada visus lietotajus\n|remove - nonem lietotaju\n|edit - redige lietotaju\n||name - nomainit vardu\n||surname - nomainit uzvardu\n|\n|email - nomainit epastu\n|exit - apret programmu");
+        System.out.println("list of commands:\n|register - registre lietotaju\n|show - parada visus lietotajus\n|remove - nonem lietotaju\n|edit - redige lietotaju\n||name - nomainit vardu\n||surname - nomainit uzvardu\n||email - nomainit epastu\n|\n|exit - apturet programmu");
     }
     
     public int getLastId() {
